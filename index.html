@@ -28,7 +28,7 @@
       <div class="flex items-center gap-5">
         <div>
           <div class="flex items-center gap-2 py-3 px-8 bg-green-100 rounded-3xl">
-            <h3 class="font-black">0</h3>
+            <h3 class="font-black count">0</h3>
             <img class="w-8" src="assets/heart.png" alt="">
           </div>
         </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="bg-[#00A63E] text-white rounded-3xl
          px-9 py-3.5 font-medium flex gap-2 ">
-          <h3 class="font-black">0</h3>
+          <h3 class="font-black counterBtn">0</h3>
           <button>Copy</button>
         </div>
       </div>
@@ -60,16 +60,16 @@
       <div class="flex gap-3">
         <div>
           <div class="flex gap-2 mb-2">
-            <div class="w-[390px] h-[340px] shadow-lg px-4 py-4 rounded-2xl
+            <div class="w-[390px] card h-[340px] shadow-lg px-4 py-4 rounded-2xl
            bg-[#FFF9F9]">
               <div class="flex justify-between items-center mb-4">
                 <img class="w-[60px] bg-[#FFE3E2] p-3.5 rounded-2xl h-[60px]" src="assets/emergency.png" alt="">
-                <img class="w-6 h-6" src="assets/heart.png" alt="">
+                <img class="w-6 h-6 heart" src="assets/heart.png" alt="">
               </div>
               <div>
                 <h3 class="text-2xl font-bold">National Emergency Number</h3>
                 <p class="text-lg font-normal text-[#777777] mb-6">National Emergency</p>
-                <h3 class="text-2xl font-bold">999</h3>
+                <h3 class="text-2xl font-bold copy-text">999</h3>
                 <div class="text-lg py-2 px-4 bg-[#F8F8F8] inline-block rounded-2xl text-[#777777] mb-6">
                   <h3>All</h3>
                 </div>
@@ -78,19 +78,19 @@
                 <div class="border-1 text-[#777777] border-gray-400
                px-[60px] py-3 rounded-xl">
                   <i class="fa-solid fa-copy"></i>
-                  <button>Copy</button>
+                  <button class="copyBtn copy-btn" type="button">Copy</button>
                 </div>
                 <div class="px-[60px] py-3 rounded-xl text-white
                bg-green-600">
                   <i class="fa-solid fa-phone"></i>
-                  <button class="myBtn">Call</button>
+                  <button class="myBtn call-btn " data-number="999">Call</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <div class=" flex justify-between items-center">
+          <div class="flex justify-between items-center">
             <div class="flex gap-1.5 items-center">
               <i class="fa-solid fa-clock"></i>
               <h3 class="text-xl">Call History</h3>
@@ -98,6 +98,10 @@
             <div>
               <button class="px-8 py-3.5 bg-green-600 rounded-3xl text-white">Clear</button>
             </div>
+          </div>
+          <div class="p-4 call-info">
+            <h3 class="font-semibold">Fire Service Number</h3>
+            <p class="text-[#777777]">999</p>
           </div>
         </div>
       </div>
