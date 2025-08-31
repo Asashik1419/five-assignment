@@ -13,11 +13,10 @@ document.querySelectorAll(".call-btn").forEach(btn => {
       const title = card.querySelector(".title").innerText;
       const number = card.querySelector(".number").innerText;
 
-      // ✅ শুধু সময় (ঘণ্টা:মিনিট:সেকেন্ড)
       const now = new Date();
       const currentTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
-      const alertText = `Title: ${title}, Number: ${number}, Time: ${currentTime}`;
+      const alertText = `${title} ${number}`;
       alert(alertText);
 
       const div = document.createElement("div");
