@@ -1,19 +1,42 @@
 let token = 100;
 const tokenEl = document.querySelector(".token");
-const callInfoEl = document.querySelector(".call-info");
+const historyEl = document.querySelector(".history");
+const clearBtn = document.querySelector(".clear-btn");
 
 document.querySelectorAll(".call-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     if (token > 0) {
       token -= 20;
       tokenEl.innerText = token;
-      callInfoEl.textContent = btn.innerText;
 
-      alert(btn.innerText);
+      const card = btn.closest(".card");
+      const title = card.querySelector(".title").innerText;
+      const number = card.querySelector(".number").innerText;
+
+      // ✅ শুধু সময় (ঘণ্টা:মিনিট:সেকেন্ড)
+      const now = new Date();
+      const currentTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+      const alertText = `Title: ${title}, Number: ${number}, Time: ${currentTime}`;
+      alert(alertText);
+
+      const div = document.createElement("div");
+      div.classList.add("history-item");
+      div.innerHTML = `
+        <div class="history-title">${title}</div>
+        <div class="history-number">${number}</div>
+        <div class="history-time">${currentTime}</div>
+      `;
+      historyEl.appendChild(div);
+
     } else {
-      alert("Token nai");
+      alert("You don't have enough tokens. You will need 20 tokens to make a call.");
     }
   });
+});
+
+clearBtn.addEventListener("click", () => {
+  historyEl.innerHTML = "";
 });
 // heart icon js
 const count = document.querySelector(".count");
@@ -58,6 +81,4 @@ document.addEventListener("click", async (e) => {
   } catch (err) {
     fallbackCopy(text, card);
   }
-
-
 });
